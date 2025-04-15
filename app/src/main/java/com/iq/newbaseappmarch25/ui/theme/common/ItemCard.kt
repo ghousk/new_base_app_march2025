@@ -38,19 +38,17 @@ fun ItemCard(user: User, onClick: (User) -> Unit) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            AsyncImage(
-                model = user.avatar_url,
-                contentDescription = "User Avatar",
-                modifier = Modifier.size(50.dp)
-                    .padding(8.dp),
-                alignment = Alignment.Center,
-                contentScale = ContentScale.Crop,
-                alpha = 1.0F
-            )
-        }
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
+            Column(Modifier.padding(8.dp)) {
+                AsyncImage(
+                    model = user.avatar_url,
+                    contentDescription = "User Avatar",
+                    modifier = Modifier.size(100.dp)
+                        .padding(2.dp),
+                    alignment = Alignment.Center,
+                    contentScale = ContentScale.Crop,
+                    alpha = 1.0F
+                )
+            }
             Column(Modifier.padding(8.dp)) {
                 user.name?.let { name ->
                     Text(
@@ -69,8 +67,8 @@ fun ItemCard(user: User, onClick: (User) -> Unit) {
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
-
             }
+
         }
     }
 
