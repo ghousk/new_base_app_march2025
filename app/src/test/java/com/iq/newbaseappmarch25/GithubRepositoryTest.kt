@@ -19,22 +19,22 @@ import kotlin.test.assertEquals
  * Copyright (C) Innovative Quest Ltd All Rights Reserved
  * Any copying or reproduction of this software in strictly prohibited.
  * *********************************************************************/
-//class GithubRepositoryTest {
-//    private lateinit var repository: GithubRepository
-//    private val mockApiService = mockk<GithubApiService>()
-//
-//    @Before
-//    fun setup() {
-//        repository = GithubRepository(mockApiService)
-//    }
-//
-//    @Test
-//    fun `getUsers should return users from API`() = runTest {
-//        val mockUsers = listOf(User(1, "user1", "url1", "name1", "bio1", 10, 5, 2))
-//        coEvery { mockApiService.getUsers() } returns mockUsers
-//
-//        val result = repository.getUsers()
-//
-//        assertEquals(mockUsers, result)
-//    }
-//}
+class GithubRepositoryTest {
+    private lateinit var repository: GithubRepository
+    private val mockApiService = mockk<GithubApiService>()
+
+    @Before
+    fun setup() {
+        repository = GithubRepository(mockApiService)
+    }
+
+    @Test
+    fun `getUsers should return users from API`() = runTest {
+        val mockUsers = listOf(User(1, "user1", "url1", "name1", "bio1", 10, 5, 2))
+        coEvery { mockApiService.getUsers() } returns mockUsers
+
+        val result = repository.getUsers()
+
+        assertEquals(mockUsers, result)
+    }
+}

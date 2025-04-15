@@ -1,10 +1,8 @@
 package com.iq.newbaseappmarch25.screens
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.iq.newbaseappmarch25.model.User
+import com.iq.newbaseappmarch25.ui.theme.common.ItemCard
 import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
 import kotlinx.coroutines.launch
 
@@ -43,20 +42,8 @@ fun UserListScreen(viewModel: GithubViewModel, onUserClick: (String) -> Unit) {
 }
 
 @Composable
-fun UserTile(user: User, onClick: () -> Unit) {
-    Card(onClick = onClick) {
-        Row {
-            AsyncImage(
-                model = user.avatar_url,
-                contentDescription = "User Avatar",
-                modifier = Modifier.size(50.dp)
-            )
-            Column {
-                Text(text = user.login)
-                Text(text = user.bio ?: "")
-            }
-        }
-    }
+fun UserTile(user: User, onClick: (User) -> Unit) {
+    ItemCard(user, onClick)
 }
 
 @Composable
