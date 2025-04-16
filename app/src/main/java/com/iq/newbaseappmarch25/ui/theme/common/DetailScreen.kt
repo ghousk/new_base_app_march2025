@@ -45,7 +45,8 @@ fun DetailScreen(user: User) {
                 color = MaterialTheme.colorScheme.onSurface)
             Text(text = LocalContext.current.getString(R.string.lorem_ipsum),
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface)
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(0.dp,8.dp, 0.dp, 0.dp))
         }
 
     }
