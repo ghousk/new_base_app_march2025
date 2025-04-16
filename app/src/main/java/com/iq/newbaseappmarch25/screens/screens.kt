@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.iq.newbaseappmarch25.model.User
+import com.iq.newbaseappmarch25.ui.theme.common.DetailScreen
 import com.iq.newbaseappmarch25.ui.theme.common.ItemCard
 import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
 import kotlinx.coroutines.launch
@@ -58,17 +59,6 @@ fun UserDetailScreen(viewModel: GithubViewModel, username: String) {
 
     val user = viewModel.selectedUser
     if (user != null) {
-        Column {
-            AsyncImage(
-                model = user.avatar_url,
-                contentDescription = "User Avatar",
-                modifier = Modifier.size(100.dp)
-            )
-            Text(text = user.name ?: "")
-            Text(text = user.bio ?: "")
-            Text(text = "Repos: ${user.public_repos}")
-            Text(text = "Followers: ${user.followers}")
-            Text(text = "Following: ${user.following}")
-        }
+        DetailScreen(user)
     }
 }

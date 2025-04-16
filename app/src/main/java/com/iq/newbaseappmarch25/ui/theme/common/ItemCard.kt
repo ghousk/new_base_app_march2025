@@ -54,16 +54,16 @@ fun ItemCard(user: User, onClick: (User) -> Unit) {
                     Text(
                         text = Html.fromHtml(name, Html.FROM_HTML_MODE_LEGACY).toString(),
                         style = MaterialTheme.typography.headlineSmall,
-                        color = MaterialTheme.colorScheme.onSurface,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 } ?: run { Text(
                     text = "Default User Name",
                     style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.onSurface,
+                    color = MaterialTheme.colorScheme.onSurface
                 ) }
                 Text(
                     text = Html.fromHtml(user.login, Html.FROM_HTML_MODE_LEGACY).toString(),
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyMedium
                 )
                 user.bio?.let {
                     Text(
