@@ -44,24 +44,24 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Scaffold(
-                        modifier = Modifier.fillMaxSize(),
-                        topBar = {
-                            CenterAlignedTopAppBar(
-                                title = {
-                                    Text(
-                                        text = stringResource(R.string.app_name),
-                                        fontSize = 20.sp,
-                                        fontWeight = FontWeight.Bold
-                                    )
-                                }
-                            )
-                        }
-                    ) { values ->
+//                    Scaffold(
+//                        modifier = Modifier.fillMaxSize(),
+//                        topBar = {
+//                            CenterAlignedTopAppBar(
+//                                title = {
+//                                    Text(
+//                                        text = stringResource(R.string.app_name),
+//                                        fontSize = 20.sp,
+//                                        fontWeight = FontWeight.Bold
+//                                    )
+//                                }
+//                            )
+//                        }
+//                    ) { values ->
 
-                        AppNavigation(viewModel, values)
+                        AppNavigation(viewModel)
 
-                    }
+//                    }
 
                 }
             }
@@ -70,13 +70,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun AppNavigation(viewModel: GithubViewModel, values: PaddingValues) {
+fun AppNavigation(viewModel: GithubViewModel) {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "userList",
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(values)) {
+    NavHost(navController = navController, startDestination = "userList") {
         composable("userList") {
             UserListScreen(viewModel) { username ->
                 navController.navigate("userDetail/$username")
@@ -84,7 +81,7 @@ fun AppNavigation(viewModel: GithubViewModel, values: PaddingValues) {
         }
         composable("userDetail/{username}") { backStackEntry ->
             val username = backStackEntry.arguments?.getString("username") ?: return@composable
-            UserDetailScreen(viewModel, username)
+            UserDetailScreen(viewModel, username, navController)
         }
     }
 }
