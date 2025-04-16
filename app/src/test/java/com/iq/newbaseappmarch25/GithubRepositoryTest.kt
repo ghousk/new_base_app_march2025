@@ -5,6 +5,7 @@ import com.iq.newbaseappmarch25.model.User
 import com.iq.newbaseappmarch25.repository.GithubRepository
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
@@ -36,5 +37,14 @@ class GithubRepositoryTest {
         val result = repository.getUsers()
 
         assertEquals(mockUsers, result)
+    }
+
+    @Test
+    fun `test get item by id` () = runTest {
+        val mockUser = User(1, "user1", "url1", "name1", "bio1", 10, 5, 2)
+        coEvery { mockApiService.getUserDetails("user1") } returns mockUser
+
+        val item = repository.getUserDetails("user1")
+        assertEquals("name1", item.name)
     }
 }
