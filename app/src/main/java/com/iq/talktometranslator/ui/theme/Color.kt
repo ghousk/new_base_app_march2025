@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.ui.theme
+package com.iq.talktometranslator.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

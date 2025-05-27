@@ -1,11 +1,11 @@
-package com.iq.newbaseappmarch25.viewmodel
+package com.iq.talktometranslator.viewmodel
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.iq.newbaseappmarch25.model.User
-import com.iq.newbaseappmarch25.repository.GithubRepository
+import com.iq.talktometranslator.model.User
+import com.iq.talktometranslator.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -1,9 +1,9 @@
-package com.iq.newbaseappmarch25.di
+package com.iq.talktometranslator.di
 
-import com.iq.newbaseappmarch25.api.GithubApiService
-import com.iq.newbaseappmarch25.api.RetrofitClient
-import com.iq.newbaseappmarch25.repository.GithubRepository
-import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
+import com.iq.talktometranslator.api.GithubApiService
+import com.iq.talktometranslator.api.RetrofitClient
+import com.iq.talktometranslator.repository.GithubRepository
+import com.iq.talktometranslator.viewmodel.GithubViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

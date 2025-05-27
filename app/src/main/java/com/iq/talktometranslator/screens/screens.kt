@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.screens
+package com.iq.talktometranslator.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -14,11 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.iq.newbaseappmarch25.R
-import com.iq.newbaseappmarch25.model.User
-import com.iq.newbaseappmarch25.ui.theme.common.DetailScreen
-import com.iq.newbaseappmarch25.ui.theme.common.ItemCard
-import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
+import com.iq.talktometranslator.R
+import com.iq.talktometranslator.model.User
+import com.iq.talktometranslator.ui.theme.common.DetailScreen
+import com.iq.talktometranslator.ui.theme.common.ItemCard
+import com.iq.talktometranslator.viewmodel.GithubViewModel
 import kotlinx.coroutines.launch
 
 /**********************************************************************

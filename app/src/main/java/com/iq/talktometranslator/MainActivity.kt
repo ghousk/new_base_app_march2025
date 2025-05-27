@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25
+package com.iq.talktometranslator
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,10 +15,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.iq.newbaseappmarch25.screens.UserDetailScreen
-import com.iq.newbaseappmarch25.screens.UserListScreen
-import com.iq.newbaseappmarch25.ui.theme.NewBaseAppMarch25Theme
-import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
+import com.iq.talktometranslator.screens.UserDetailScreen
+import com.iq.talktometranslator.screens.UserListScreen
+import com.iq.talktometranslator.ui.theme.NewBaseAppMarch25Theme
+import com.iq.talktometranslator.viewmodel.GithubViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

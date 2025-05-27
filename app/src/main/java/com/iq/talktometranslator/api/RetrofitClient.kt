@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.api
+package com.iq.talktometranslator.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

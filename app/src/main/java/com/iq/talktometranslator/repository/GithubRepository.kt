@@ -1,7 +1,7 @@
-package com.iq.newbaseappmarch25.repository
+package com.iq.talktometranslator.repository
 
-import com.iq.newbaseappmarch25.api.GithubApiService
-import com.iq.newbaseappmarch25.model.User
+import com.iq.talktometranslator.api.GithubApiService
+import com.iq.talktometranslator.model.User
 import javax.inject.Inject
 
 /**********************************************************************

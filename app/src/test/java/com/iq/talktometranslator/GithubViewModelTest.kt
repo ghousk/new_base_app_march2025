@@ -1,9 +1,9 @@
-package com.iq.newbaseappmarch25
+package com.iq.talktometranslator
 
-import com.iq.newbaseappmarch25.api.GithubApiService
-import com.iq.newbaseappmarch25.model.User
-import com.iq.newbaseappmarch25.repository.GithubRepository
-import com.iq.newbaseappmarch25.viewmodel.GithubViewModel
+import com.iq.talktometranslator.api.GithubApiService
+import com.iq.talktometranslator.model.User
+import com.iq.talktometranslator.repository.GithubRepository
+import com.iq.talktometranslator.viewmodel.GithubViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.launch

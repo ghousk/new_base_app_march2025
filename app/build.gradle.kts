@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.iq.newbaseappmarch25"
+    namespace = "com.iq.talktometranslator"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.iq.newbaseappmarch25"
+        applicationId = "com.iq.talktometranslator"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.ui.theme.common
+package com.iq.talktometranslator.ui.theme.common
 
 import android.text.Html
 import androidx.compose.foundation.clickable
@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.iq.newbaseappmarch25.model.User
+import com.iq.talktometranslator.model.User
 
 @Composable
 fun ItemCard(user: User, onClick: (User) -> Unit) {

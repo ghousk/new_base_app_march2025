@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.model
+package com.iq.talktometranslator.model
 
 /**********************************************************************
  * Copyright 2025 Innovative Quest Ltd

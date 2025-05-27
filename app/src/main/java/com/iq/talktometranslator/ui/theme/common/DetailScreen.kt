@@ -1,4 +1,4 @@
-package com.iq.newbaseappmarch25.ui.theme.common
+package com.iq.talktometranslator.ui.theme.common
 
 
 import androidx.compose.foundation.layout.Column
@@ -21,8 +21,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.iq.newbaseappmarch25.R
-import com.iq.newbaseappmarch25.model.User
+import com.iq.talktometranslator.R
+import com.iq.talktometranslator.model.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
