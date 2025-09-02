@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.iq.newbaseappmarch25.model.User
 import com.iq.newbaseappmarch25.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,15 +24,15 @@ import javax.inject.Inject
  * *********************************************************************/
 @HiltViewModel
 class GithubViewModel @Inject constructor(private val repository: GithubRepository) : ViewModel() {
-    private val _users = mutableStateListOf<User>()
-    val users: List<User> get() = _users
+    private val _users = MutableStateFlow<List<User>?>(null)
+    val users: StateFlow<List<User>?> get() = _users.asStateFlow()
 
-    private val _selectedUser = mutableStateOf<User?>(null)
-    val selectedUser: User? get() = _selectedUser.value
+    private val _selectedUser = MutableStateFlow<User?>(null)
+    val selectedUser: StateFlow<User?> get() = _selectedUser.asStateFlow()
 
     fun fetchUsers() = viewModelScope.launch {
-        _users.clear()
-        _users.addAll(repository.getUsers())
+        _users.value = null
+        _users.value = repository.getUsers()
     }
 
     fun fetchUserDetails(username: String) = viewModelScope.launch {

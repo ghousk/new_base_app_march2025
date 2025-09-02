@@ -9,6 +9,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -34,6 +36,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun UserListScreen(viewModel: GithubViewModel, onUserClick: (String) -> Unit) {
     val scope = rememberCoroutineScope()
+    val users by viewModel.users.collectAsState()
 
     LaunchedEffect(Unit) {
         scope.launch {
@@ -55,10 +58,12 @@ fun UserListScreen(viewModel: GithubViewModel, onUserClick: (String) -> Unit) {
         }
     ) { values ->
         LazyColumn(modifier = Modifier.padding(values)) {
-            items(viewModel.users.size) { index ->
-                UserTile(
-                    user = viewModel.users[index],
-                    onClick = { onUserClick(viewModel.users[index].login) })
+            users?.let { myUsers ->
+                items(myUsers.size) { index ->
+                    UserTile(
+                        user = myUsers[index],
+                        onClick = { onUserClick(myUsers[index].login) })
+                }
             }
         }
     }
@@ -72,6 +77,7 @@ fun UserTile(user: User, onClick: (User) -> Unit) {
 @Composable
 fun UserDetailScreen(viewModel: GithubViewModel, username: String, navController: NavController) {
     val scope = rememberCoroutineScope()
+    val selectedUser by viewModel.selectedUser.collectAsState()
 
     LaunchedEffect(username) {
         scope.launch {
@@ -79,9 +85,8 @@ fun UserDetailScreen(viewModel: GithubViewModel, username: String, navController
         }
     }
 
-    val user = viewModel.selectedUser
-    if (user != null) {
-        DetailScreen(user, onBackClick = {
+    selectedUser?.let {
+        DetailScreen(it, onBackClick = {
             navController.popBackStack()
         })
     }
